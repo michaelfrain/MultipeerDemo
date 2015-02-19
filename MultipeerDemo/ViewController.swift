@@ -56,8 +56,6 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
         
         let error = NSErrorPointer()
         
-        self.dataType = "Video"
-        
         self.session.sendData(video, toPeers: self.session.connectedPeers, withMode: .Reliable, error: error)
         
         if error != nil {
@@ -74,8 +72,6 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
         
         let error = NSErrorPointer()
         
-        self.dataType = "Photo"
-        
         self.session.sendData(photo, toPeers: self.session.connectedPeers, withMode: .Reliable, error: error)
         
         if error != nil {
@@ -90,8 +86,6 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
         
         let error = NSErrorPointer()
         
-        self.dataType = "JSON"
-        
         self.session.sendData(json, toPeers: self.session.connectedPeers, withMode: .Reliable, error: error)
         
         if error != nil {
@@ -101,6 +95,13 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     
     func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!) {
         self.endSend = NSDate()
+        if data.length > 4000000 && data.length < 5000000 {
+            self.dataType = "Video"
+        } else if data.length > 500000 && data.length < 3000000 {
+            self.dataType = "Photo"
+        } else {
+            self.dataType = "JSON"
+        }
         self.resourceProgress.text = "Received Data from \(peerID.displayName): \(self.dataType)"
         let calendar = NSCalendar.currentCalendar()
         var components = calendar.components(NSCalendarUnit.CalendarUnitSecond, fromDate: self.startSend, toDate: self.endSend, options: NSCalendarOptions.MatchFirst)
