@@ -13,6 +13,7 @@
 		D37D8F8E1A955EBB00649DCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37D8F8D1A955EBB00649DCE /* Images.xcassets */; };
 		D37D8F911A955EBB00649DCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37D8F8F1A955EBB00649DCE /* LaunchScreen.xib */; };
 		D37D8F9D1A955EBB00649DCE /* MultipeerDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D8F9C1A955EBB00649DCE /* MultipeerDemoTests.swift */; };
+		D37D8FA71A95813600649DCE /* 229-x6hu.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D37D8FA61A95813600649DCE /* 229-x6hu.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		D37D8F961A955EBB00649DCE /* MultipeerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipeerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37D8F9B1A955EBB00649DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D37D8F9C1A955EBB00649DCE /* MultipeerDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerDemoTests.swift; sourceTree = "<group>"; };
+		D37D8FA61A95813600649DCE /* 229-x6hu.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "229-x6hu.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		D37D8F841A955EBB00649DCE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D37D8FA61A95813600649DCE /* 229-x6hu.mp4 */,
 				D37D8F851A955EBB00649DCE /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37D8FA71A95813600649DCE /* 229-x6hu.mp4 in Resources */,
 				D37D8F8C1A955EBB00649DCE /* Main.storyboard in Resources */,
 				D37D8F911A955EBB00649DCE /* LaunchScreen.xib in Resources */,
 				D37D8F8E1A955EBB00649DCE /* Images.xcassets in Resources */,

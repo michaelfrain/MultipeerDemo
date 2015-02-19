@@ -30,18 +30,27 @@
                                 <state key="normal" title="Send sample film">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendFilm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QOb-so-eQC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ved-eR-gZk">
                                 <rect key="frame" x="233" y="188" width="134" height="30"/>
                                 <state key="normal" title="Send sample photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zx2-qU-BVe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-yI-roP">
                                 <rect key="frame" x="196" y="270" width="208" height="30"/>
                                 <state key="normal" title="Send sample text data (JSON)">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendJSONData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Itt-KC-jBx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

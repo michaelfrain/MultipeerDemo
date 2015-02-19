@@ -38,6 +38,18 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
         self.presentViewController(self.browser, animated: true, completion: nil)
     }
     
+    @IBAction func sendFilm(sender: UIButton!) {
+        
+    }
+    
+    @IBAction func sendPhoto(sender: UIButton!) {
+        
+    }
+    
+    @IBAction func sendJSONData(sender: UIButton!) {
+        
+    }
+    
     func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!) {
         
     }
