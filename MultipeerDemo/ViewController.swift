@@ -18,8 +18,9 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     var assistant: MCAdvertiserAssistant!
     var browser: MCBrowserViewController!
     
-    var startSend: NSDate!
+    lazy var startSend = NSDate()
     var endSend: NSDate!
+    var dataType = ""
     
     @IBOutlet var resourceProgress: UILabel!
     @IBOutlet var timeResult: UILabel!
@@ -49,11 +50,13 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     }
     
     @IBAction func sendFilm(sender: UIButton!) {
-        self.startSend = NSDate()
+        let newDate = self.startSend
         let filePath = NSBundle.mainBundle().pathForResource("229-x6hu", ofType: "mp4")
         let video = NSData(contentsOfFile: filePath!)
         
         let error = NSErrorPointer()
+        
+        self.dataType = "Video"
         
         self.session.sendData(video, toPeers: self.session.connectedPeers, withMode: .Reliable, error: error)
         
@@ -65,11 +68,13 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     }
     
     @IBAction func sendPhoto(sender: UIButton!) {
-        self.startSend = NSDate()
+        let newDate = self.startSend
         let filePath = NSBundle.mainBundle().pathForResource("BabyFacepalm", ofType: "JPG")
         let photo = NSData(contentsOfFile: filePath!)
         
         let error = NSErrorPointer()
+        
+        self.dataType = "Photo"
         
         self.session.sendData(photo, toPeers: self.session.connectedPeers, withMode: .Reliable, error: error)
         
@@ -79,11 +84,13 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     }
     
     @IBAction func sendJSONData(sender: UIButton!) {
-        self.startSend = NSDate()
+        let newDate = self.startSend
         let filePath = NSBundle.mainBundle().pathForResource("Twitter", ofType: "json")
         let json = NSData(contentsOfFile: filePath!)
         
         let error = NSErrorPointer()
+        
+        self.dataType = "JSON"
         
         self.session.sendData(json, toPeers: self.session.connectedPeers, withMode: .Reliable, error: error)
         
@@ -94,7 +101,7 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     
     func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!) {
         self.endSend = NSDate()
-        self.resourceProgress.text = "Received Data from \(peerID.displayName)"
+        self.resourceProgress.text = "Received Data from \(peerID.displayName): \(self.dataType)"
         let calendar = NSCalendar.currentCalendar()
         var components = calendar.components(NSCalendarUnit.CalendarUnitSecond, fromDate: self.startSend, toDate: self.endSend, options: NSCalendarOptions.MatchFirst)
         let timeToSend = components.second
@@ -114,7 +121,18 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     }
     
     func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {
-        self.resourceProgress.text = "\(peerID.displayName) changed state to \(state.rawValue)"
+        var stateString = ""
+        switch state {
+        case MCSessionState.Connected:
+            stateString = "Connected"
+            
+        case MCSessionState.Connecting:
+            stateString = "Connecting"
+            
+        case MCSessionState.NotConnected:
+            stateString = "Disconnected"
+        }
+        self.resourceProgress.text = "\(peerID.displayName) changed state to \(stateString)"
     }
     
     func browserViewControllerDidFinish(browserViewController: MCBrowserViewController!) {
