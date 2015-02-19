@@ -14,6 +14,8 @@
 		D37D8F911A955EBB00649DCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37D8F8F1A955EBB00649DCE /* LaunchScreen.xib */; };
 		D37D8F9D1A955EBB00649DCE /* MultipeerDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D8F9C1A955EBB00649DCE /* MultipeerDemoTests.swift */; };
 		D37D8FA71A95813600649DCE /* 229-x6hu.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D37D8FA61A95813600649DCE /* 229-x6hu.mp4 */; };
+		D37D8FA91A9585D100649DCE /* BabyFacepalm.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D37D8FA81A9585D100649DCE /* BabyFacepalm.JPG */; };
+		D37D8FAB1A9589A600649DCE /* Twitter.json in Resources */ = {isa = PBXBuildFile; fileRef = D37D8FAA1A9589A600649DCE /* Twitter.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		D37D8F9B1A955EBB00649DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D37D8F9C1A955EBB00649DCE /* MultipeerDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerDemoTests.swift; sourceTree = "<group>"; };
 		D37D8FA61A95813600649DCE /* 229-x6hu.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "229-x6hu.mp4"; sourceTree = "<group>"; };
+		D37D8FA81A9585D100649DCE /* BabyFacepalm.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BabyFacepalm.JPG; sourceTree = "<group>"; };
+		D37D8FAA1A9589A600649DCE /* Twitter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Twitter.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +96,9 @@
 		D37D8F841A955EBB00649DCE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D37D8FAA1A9589A600649DCE /* Twitter.json */,
 				D37D8FA61A95813600649DCE /* 229-x6hu.mp4 */,
+				D37D8FA81A9585D100649DCE /* BabyFacepalm.JPG */,
 				D37D8F851A955EBB00649DCE /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -196,6 +202,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D37D8FA71A95813600649DCE /* 229-x6hu.mp4 in Resources */,
+				D37D8FAB1A9589A600649DCE /* Twitter.json in Resources */,
+				D37D8FA91A9585D100649DCE /* BabyFacepalm.JPG in Resources */,
 				D37D8F8C1A955EBB00649DCE /* Main.storyboard in Resources */,
 				D37D8F911A955EBB00649DCE /* LaunchScreen.xib in Resources */,
 				D37D8F8E1A955EBB00649DCE /* Images.xcassets in Resources */,
@@ -411,6 +419,7 @@
 				D37D8FA21A955EBB00649DCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D37D8FA31A955EBB00649DCE /* Build configuration list for PBXNativeTarget "MultipeerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +428,7 @@
 				D37D8FA51A955EBB00649DCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

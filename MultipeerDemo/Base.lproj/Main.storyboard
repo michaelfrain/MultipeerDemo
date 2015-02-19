@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7512"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ise-49-uBK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ise-49-uBK">
                                 <rect key="frame" x="229" y="41" width="143" height="30"/>
                                 <state key="normal" title="Browse Connections">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -25,7 +25,7 @@
                                     <action selector="showBrowser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P0f-fI-yAz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHU-TE-qoZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHU-TE-qoZ">
                                 <rect key="frame" x="241" y="114" width="119" height="30"/>
                                 <state key="normal" title="Send sample film">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,7 +34,7 @@
                                     <action selector="sendFilm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QOb-so-eQC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ved-eR-gZk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ved-eR-gZk">
                                 <rect key="frame" x="233" y="188" width="134" height="30"/>
                                 <state key="normal" title="Send sample photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,7 +43,7 @@
                                     <action selector="sendPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zx2-qU-BVe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-yI-roP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-yI-roP">
                                 <rect key="frame" x="196" y="270" width="208" height="30"/>
                                 <state key="normal" title="Send sample text data (JSON)">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,9 +52,30 @@
                                     <action selector="sendJSONData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Itt-KC-jBx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current resource being sent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqu-jj-G6y">
+                                <rect key="frame" x="193" y="369" width="214" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wIu-yI-roP" firstAttribute="top" secondItem="ved-eR-gZk" secondAttribute="bottom" constant="52" id="10J-x0-7mv"/>
+                            <constraint firstAttribute="centerX" secondItem="IHU-TE-qoZ" secondAttribute="centerX" constant="-0.5" id="EIM-SB-SQt"/>
+                            <constraint firstItem="Ise-49-uBK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="NPF-tK-L6Y"/>
+                            <constraint firstItem="IHU-TE-qoZ" firstAttribute="top" secondItem="Ise-49-uBK" secondAttribute="bottom" constant="43" id="Pie-9c-f6n"/>
+                            <constraint firstAttribute="centerX" secondItem="wIu-yI-roP" secondAttribute="centerX" id="ZBp-cd-eLf"/>
+                            <constraint firstAttribute="centerX" secondItem="ved-eR-gZk" secondAttribute="centerX" id="gCQ-6R-Iff"/>
+                            <constraint firstItem="lqu-jj-G6y" firstAttribute="top" secondItem="wIu-yI-roP" secondAttribute="bottom" constant="69" id="gay-La-9sE"/>
+                            <constraint firstItem="ved-eR-gZk" firstAttribute="top" secondItem="IHU-TE-qoZ" secondAttribute="bottom" constant="44" id="h08-nd-Mca"/>
+                            <constraint firstAttribute="centerX" secondItem="lqu-jj-G6y" secondAttribute="centerX" id="kJB-5K-wZS"/>
+                            <constraint firstAttribute="centerX" secondItem="Ise-49-uBK" secondAttribute="centerX" constant="-0.5" id="qFL-Cc-Kkf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resourceProgress" destination="lqu-jj-G6y" id="6eF-Pq-3Z5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
