@@ -41,7 +41,8 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     }
     
     @IBAction func sendFilm(sender: UIButton!) {
-        let video = NSData(contentsOfFile: "/MultipeerDemo/229-x6hu.mp4")
+        let filePath = NSBundle.mainBundle().pathForResource("229-x6hu", ofType: "mp4")
+        let video = NSData(contentsOfFile: filePath!)
         
         let error = NSErrorPointer()
         
@@ -55,7 +56,8 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     }
     
     @IBAction func sendPhoto(sender: UIButton!) {
-        let photo = NSData(contentsOfFile: "BabyFacepalm.JPG")
+        let filePath = NSBundle.mainBundle().pathForResource("BabyFacepalm", ofType: "JPG")
+        let photo = NSData(contentsOfFile: filePath!)
         
         let error = NSErrorPointer()
         
@@ -67,11 +69,12 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     }
     
     @IBAction func sendJSONData(sender: UIButton!) {
-        let json = NSData(contentsOfFile: "/Users/michaelfrain/MultipeerDemo/MultipeerDemo/Twitter.json")
+        let filePath = NSBundle.mainBundle().pathForResource("Twitter", ofType: "json")
+        let json = NSData(contentsOfFile: filePath!)
         
         let error = NSErrorPointer()
         
-        self.session.sendData(json, toPeers: self.session.connectedPeers, withMode: .Unreliable, error: error)
+        self.session.sendData(json, toPeers: self.session.connectedPeers, withMode: .Reliable, error: error)
         
         if error != nil {
             NSLog(error.debugDescription)
