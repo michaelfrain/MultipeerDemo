@@ -18,7 +18,15 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     var assistant: MCAdvertiserAssistant!
     var browser: MCBrowserViewController!
     
+    var startSend: NSDate!
+    var endSend: NSDate!
+    
     @IBOutlet var resourceProgress: UILabel!
+    @IBOutlet var timeResult: UILabel!
+    
+    @IBOutlet var btnFilm: UIButton!
+    @IBOutlet var btnPhoto: UIButton!
+    @IBOutlet var btnJSON: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +49,7 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     }
     
     @IBAction func sendFilm(sender: UIButton!) {
+        self.startSend = NSDate()
         let filePath = NSBundle.mainBundle().pathForResource("229-x6hu", ofType: "mp4")
         let video = NSData(contentsOfFile: filePath!)
         
@@ -56,6 +65,7 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     }
     
     @IBAction func sendPhoto(sender: UIButton!) {
+        self.startSend = NSDate()
         let filePath = NSBundle.mainBundle().pathForResource("BabyFacepalm", ofType: "JPG")
         let photo = NSData(contentsOfFile: filePath!)
         
@@ -69,6 +79,7 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     }
     
     @IBAction func sendJSONData(sender: UIButton!) {
+        self.startSend = NSDate()
         let filePath = NSBundle.mainBundle().pathForResource("Twitter", ofType: "json")
         let json = NSData(contentsOfFile: filePath!)
         
@@ -82,43 +93,28 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
     }
     
     func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!) {
-        
+        self.endSend = NSDate()
+        self.resourceProgress.text = "Received Data from \(peerID.displayName)"
+        let calendar = NSCalendar.currentCalendar()
+        var components = calendar.components(NSCalendarUnit.CalendarUnitSecond, fromDate: self.startSend, toDate: self.endSend, options: NSCalendarOptions.MatchFirst)
+        let timeToSend = components.second
+        self.timeResult.text = "Time to send: \(timeToSend) seconds"
     }
     
     func session(session: MCSession!, didStartReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, withProgress progress: NSProgress!) {
-        if resourceName == "/Users/michaelfrain/MultipeerDemo/MultipeerDemo/229-x6hu.mp4" {
-            self.resourceProgress.text = "Receiving film"
-        }
-        
-        if resourceName == "BabyFacepalm.JPG" {
-            self.resourceProgress.text = "Receiving photo"
-        }
-        
-        if resourceName == "/Users/michaelfrain/MultipeerDemo/MultipeerDemo/Twitter.json" {
-            self.resourceProgress.text = "Receiving JSON"
-        }
+        self.resourceProgress.text = "Receiving Resource from \(peerID.displayName): \(resourceName)"
     }
     
     func session(session: MCSession!, didFinishReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, atURL localURL: NSURL!, withError error: NSError!) {
-        if resourceName == "/Users/michaelfrain/MultipeerDemo/MultipeerDemo/229-x6hu.mp4" {
-            self.resourceProgress.text = "Film received"
-        }
-        
-        if resourceName == "BabyFacepalm.JPG" {
-            self.resourceProgress.text = "Photo received"
-        }
-        
-        if resourceName == "/Users/michaelfrain/MultipeerDemo/MultipeerDemo/Twitter.json" {
-            self.resourceProgress.text = "JSON received"
-        }
+        self.resourceProgress.text = "Received Resource from \(peerID.displayName): \(resourceName)"
     }
     
     func session(session: MCSession!, didReceiveStream stream: NSInputStream!, withName streamName: String!, fromPeer peerID: MCPeerID!) {
-        
+        self.resourceProgress.text = "Received Input Stream from \(peerID.displayName)"
     }
     
     func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {
-        
+        self.resourceProgress.text = "\(peerID.displayName) changed state to \(state.rawValue)"
     }
     
     func browserViewControllerDidFinish(browserViewController: MCBrowserViewController!) {

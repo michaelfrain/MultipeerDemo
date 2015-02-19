@@ -52,8 +52,14 @@
                                     <action selector="sendJSONData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Itt-KC-jBx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current resource being sent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqu-jj-G6y">
-                                <rect key="frame" x="193" y="369" width="214" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No resource being sent or received" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqu-jj-G6y">
+                                <rect key="frame" x="166" y="369" width="269" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to send" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH4-Ov-Ocw">
+                                <rect key="frame" x="251" y="430" width="100" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -62,6 +68,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wIu-yI-roP" firstAttribute="top" secondItem="ved-eR-gZk" secondAttribute="bottom" constant="52" id="10J-x0-7mv"/>
+                            <constraint firstAttribute="centerX" secondItem="eH4-Ov-Ocw" secondAttribute="centerX" constant="-0.5" id="Ap4-ml-z5a"/>
+                            <constraint firstItem="eH4-Ov-Ocw" firstAttribute="top" secondItem="lqu-jj-G6y" secondAttribute="bottom" constant="40" id="CEm-6a-aSo"/>
                             <constraint firstAttribute="centerX" secondItem="IHU-TE-qoZ" secondAttribute="centerX" constant="-0.5" id="EIM-SB-SQt"/>
                             <constraint firstItem="Ise-49-uBK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="NPF-tK-L6Y"/>
                             <constraint firstItem="IHU-TE-qoZ" firstAttribute="top" secondItem="Ise-49-uBK" secondAttribute="bottom" constant="43" id="Pie-9c-f6n"/>
@@ -74,7 +82,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnFilm" destination="IHU-TE-qoZ" id="Dwf-BE-A2t"/>
+                        <outlet property="btnJSON" destination="wIu-yI-roP" id="Vtu-ci-3PP"/>
+                        <outlet property="btnPhoto" destination="ved-eR-gZk" id="mRo-HH-rmD"/>
                         <outlet property="resourceProgress" destination="lqu-jj-G6y" id="6eF-Pq-3Z5"/>
+                        <outlet property="timeResult" destination="eH4-Ov-Ocw" id="rka-uz-Anv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
