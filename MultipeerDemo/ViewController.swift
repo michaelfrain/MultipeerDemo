@@ -106,6 +106,7 @@ class ViewController: UIViewController , MCSessionDelegate, MCBrowserViewControl
         var components = calendar.components(NSCalendarUnit.CalendarUnitSecond, fromDate: self.startSend, toDate: self.endSend, options: NSCalendarOptions.MatchFirst)
         let timeToSend = components.second
         self.timeResult.text = "Time to send: \(timeToSend) seconds"
+        self.startSend = NSDate()
     }
     
     func session(session: MCSession!, didStartReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, withProgress progress: NSProgress!) {
